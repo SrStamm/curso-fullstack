@@ -1,0 +1,48 @@
+#blocos {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+}
+
+.bloco {
+    font-size: 4em;
+    flex: 1;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/**
+    ATIVIDADE!
+    Para cada breakpoint, colocar uma cor diferente no .bloco
+*/
+
+/* Celulares */
+@media only screen and (width <= 480px) {
+    .bloco {
+        background-color: red;
+    }
+}
+
+/* Tablets */
+@media only screen and (480px < width <= 768px) {
+    .bloco {
+        background-color: blue;
+    }
+}
+
+/* Laptops) */
+@media only screen and (768px < width <= 1140px) {
+    .bloco {
+        background-color: green;
+    }
+}
+
+/* Desktops */
+@media only screen and (width >=1140px) {
+    #blocos {
+        flex-direction: row;
+        background-color: blueviolet;
+    }
+}

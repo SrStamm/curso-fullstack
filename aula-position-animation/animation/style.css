@@ -1,0 +1,93 @@
+/**
+    Transition é um tipo de animação para ações
+    simples, por exemplo passar o rato por cima.
+*/
+
+/**
+    Transform permite alterarmos a posição, dimensão
+    e rotação do nosso elemento.
+*/
+
+.square {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    background-color: pink;
+    margin: 20px;
+    transition: transform 0.2s ease-in-out 1s;
+
+    /* PROPRIEDADE NOVA */
+    transform: translate(0, 0);
+}
+
+.square-transition:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+/**
+    animation: permite a adição de comportamentos
+    mais complexos, em intervalos de tempo com
+    maior detalhe
+*/
+
+/*
+    Precisamos de duas propriades
+    @keyframes (determina o que é a animação)
+    animation-* (determina como é aplicada a animação)
+*/
+
+.square-animation{
+    animation: main-animation 1s ease-in-out 0s infinite alternate;
+}
+
+@keyframes main-animation {
+    0% {
+        background-color: red;
+        transform: rotate(0deg);
+    }
+
+    100% {
+        background-color: yellow;
+        transform: rotate(360deg);
+    }
+}
+
+/**
+    Exercício 1: Colocar um quadrado a cair 20px se passar o rato por cima.
+    Exercício 2: Colocar um quadrado a rodar infinitamente para a direita
+    Exercício 3: Colocar um quadrado a sempre a ir para a direita. Ao chegar à direita do site, desaparece, reaparece à esquerda do site, e continua.
+*/
+
+/* Exercicio 1*/
+.drop-square {
+    transition: transform 0.1s ease-in-out 0s;
+    transform: translate(0, 0);
+}
+
+.drop-square:hover {
+    transform: translate(0, 20px);
+}
+
+/* Exercicio 2*/
+
+.infinite-square {
+    animation: infinite-loop 1s ease-in-out 0s infinite;
+}
+
+@keyframes infinite-loop {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Exercicio 3*/
+.infinite-motion {
+    animation: 2s linear 1s infinite running slide-in;
+}

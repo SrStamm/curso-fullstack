@@ -1,0 +1,85 @@
+.square {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    background-color: pink;
+    margin: 20px;
+}
+
+.square-positioned {
+    background-color: aquamarine;
+    position: relative;
+    top: 40px;
+    left: 40px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+    position: relative;
+}
+
+.container.primeiro {
+    background-color: aqua;
+}
+
+.container.segundo {
+    background-color: rgb(239, 255, 214);
+}
+
+.container.terceiro {
+    background-color: rgb(255, 166, 236);
+}
+
+.square-especial {
+    border-radius: 1000px;
+
+    /* posicionar-se no cantinho inferior direito do primeiro parente relative */
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#ligue-me {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 1000px;
+    transition: transform 0.3s;
+    transform: scale(1);
+}
+
+#ligue-me:hover {
+    transform: scale(1.1);
+}
+
+/* 
+    Exercício 1: Colocar o botão ligue-me no canto superior esquerdo da página.
+    Exercício 2: Colocar o square-especial no canto superior direito do .container.segundo
+    Exercício 3 special mega hard: Colocar o square-especial no centro da página.
+*/
+
+/* Ejercicio 1*/
+#ligue-me {
+    left: 20px;
+}
+
+/* Ejercicio 2*/
+.square-especial {
+    bottom: 20px;
+}
+
+/* Ejercicio 3*/
+.container {
+    position: initial;
+}
+.square-especial {
+    top: 50%;
+    left: 50%;
+}

@@ -1,0 +1,9 @@
+.melancias div{
+    background-color: pink;
+}
+
+.melancias {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
