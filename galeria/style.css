@@ -90,11 +90,11 @@ main {
   border-radius: var(--radius);
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
   color: var(--accent-color);
+  background-color: var(--surface-color);
 
   max-width: 400px;
   height: 650px;
   text-align: center;
-  background-color: var(--surface-color);
 }
 
 .art-container img {
@@ -109,6 +109,30 @@ main {
   margin: 0.5rem 0;
 }
 
-.section-title {
+#exposicoes h2 {
   text-align: center;
+  font-size: var(--size-h2);
+}
+
+#exposicoes ol {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.exhibition {
+  margin: 1rem;
+  padding: 1rem;
+
+  border-radius: var(--radius);
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
+  color: var(--accent-color);
+  background-color: var(--surface-color);
+}
+
+.exhibition h3 {
+  font-size: 1.25rem;
 }
