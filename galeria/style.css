@@ -75,7 +75,8 @@ nav a:hover {
   gap: 2rem;
   flex-wrap: nowrap;
   justify-content: center;
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
   padding: 1rem;
   padding-top: var(--header-height);
 }
@@ -84,17 +85,20 @@ nav a:hover {
   flex: 1 0 auto;
   margin: 0 50px;
   padding: 1rem;
+
   border-radius: var(--radius);
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
   color: var(--accent-color);
+
   max-width: 400px;
+  height: 650px;
   text-align: center;
   background-color: var(--surface-color);
 }
 
 .art-container img {
   width: 100%;
-  height: auto;
+  height: 500px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
