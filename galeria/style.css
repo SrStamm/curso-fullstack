@@ -170,16 +170,19 @@ main {
 
 .exhibition.future {
   border: 2px solid rgb(0,240,255);
+  box-shadow: 0 0 10px rgb(0,240,255);
 }
 
 .exhibition.future img {
   filter: blur(2px);
+  border-image: rgb(0, 240, 255);
+  box-shadow: 0 0 10px rgb(0,240,255);
 }
 
 .exhibition.future h3,
 .exhibition.future p {
   color:rgb(221, 7, 101);
-  text-shadow: 0 0 10px rgb(0,240,255);
+  text-shadow: 10px 10px 10px rgb(0,240,255);
   }
 
 #comentarios h2 {
