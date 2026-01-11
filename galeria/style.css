@@ -116,8 +116,8 @@ main {
 #exposicoes ol {
   list-style: none;
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
-  flex-wrap: nowrap;
   justify-content: center;
   padding: 1rem;
 }
@@ -215,11 +215,11 @@ form input {
 }
 
 footer {
-  color: var(--accent-color);
-  background-color: var(--primary-color);
-  padding: 0.5rem;
   width: 100%;
+  background-color: var(--primary-color);
+  color: var(--accent-color);
   text-align: center;
+  padding: 0.5rem;
 }
 
 @media (orientation: portrait) {
@@ -253,6 +253,20 @@ footer {
   .art-container img {
     height: 380px;
   }
+
+  .exhibition {
+    flex: 1 1 400px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+  }
+
+  .exhibition img {
+    width: 80%;
+    height: 350px;
+  }
 }
 
 
@@ -265,5 +279,15 @@ footer {
 
   .art-container > article {
     max-height: 500px;
+  }
+
+  #exposicoes ol {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .exhibition {
+    width: 80%;
   }
 }
