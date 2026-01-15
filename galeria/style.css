@@ -31,6 +31,7 @@ body {
   background-color: var(--bg-color);
   font-family: var(--font-main);
   color: var(--primary-color);
+  overflow-x: hidden;
 }
 
 header {
@@ -152,6 +153,16 @@ main {
   box-shadow: var(--shadow);
   color: var(--accent-color);
   background-color: var(--surface-color);
+
+  transition:
+    transform 0.3 ease,
+    box-shadow 0.3 ease;
+}
+
+.exhibition:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .exhibition h3 {
@@ -192,6 +203,11 @@ main {
 .exhibition.present {
   box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3);
   transform: scale(1.05);
+}
+
+.exhibition.present:hover {
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.3);
+  transform: scale(1.1);
 }
 
 .exhibition.present h3 {
