@@ -8,10 +8,10 @@
 
   /* Tipografía */
   --font-main: "Segoe UI", Roboto, sans-serif;
-  --font-clasic: 'Playfair Display', serif;
-  --font-modern: 'Montserrat', sans-serif;
-  --font-future: 'Orbitron', sans-serif;
-  --font-content: 'Cabin', sans-serif;
+  --font-clasic: "Playfair Display", serif;
+  --font-modern: "Montserrat", sans-serif;
+  --font-future: "Orbitron", sans-serif;
+  --font-content: "Cabin", sans-serif;
   --size-base: 1rem;
   --size-h1: 2.5rem;
   --size-h2: 1.5rem;
@@ -23,8 +23,6 @@
   --shadow-sm: 0 4px 8px rgba(0, 0, 0, 0.1);
   --shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
 }
-
-
 
 body {
   padding: 0;
@@ -99,9 +97,8 @@ main {
   justify-content: space-between;
   margin: 1rem;
   padding: 1rem;
-
-  border-radius: var(--radius);
   box-shadow: var(--shadow);
+  border-radius: var(--radius);
   color: var(--accent-color);
   background-color: var(--surface-color);
 
@@ -110,11 +107,17 @@ main {
   text-align: center;
 }
 
+.art-container > article:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
 .art-container img {
   width: 100%;
   height: 500px;
   border-radius: var(--radius);
-  box-shadow: var(--shadow)
+  box-shadow: var(--shadow);
 }
 
 .art-container h2 {
@@ -170,7 +173,7 @@ main {
 
 .exhibition.past {
   opacity: 0.8;
-  background-color: #F5F5DC;
+  background-color: #f5f5dc;
 }
 
 .exhibition.past img {
@@ -181,7 +184,6 @@ main {
   color: #c06b2a;
   font-family: var(--font-clasic);
 }
-
 
 .exhibition.past p {
   color: #c06b2a;
@@ -197,20 +199,20 @@ main {
 }
 
 .exhibition.future {
-  border: 2px solid rgb(0,240,255);
-  box-shadow: 0 0 10px rgb(0,240,255);
+  border: 2px solid rgb(0, 240, 255);
+  box-shadow: 0 0 10px rgb(0, 240, 255);
 }
 
 .exhibition.future img {
   filter: blur(2px);
   border-image: rgb(0, 240, 255);
-  box-shadow: 0 0 10px rgb(0,240,255);
+  box-shadow: 0 0 10px rgb(0, 240, 255);
 }
 
 .exhibition.future h3,
 .exhibition.future p {
-  color:rgb(221, 7, 101);
-  text-shadow: 10px 10px 10px rgb(0,240,255);  
+  color: rgb(221, 7, 101);
+  text-shadow: 10px 10px 10px rgb(0, 240, 255);
 }
 
 .exhibition.future h3 {
@@ -259,7 +261,7 @@ form label {
 form input {
   width: 100%;
   height: 2.8rem;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
   border: 1px solid #ddd;
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
@@ -276,7 +278,7 @@ form textarea {
   max-height: 200px;
   height: 100%;
   font-size: 1rem;
-  padding: 0 .5rem;
+  padding: 0 0.5rem;
 }
 
 form button {
@@ -292,7 +294,7 @@ form button {
 }
 
 form button:hover {
-  cursor: pointer
+  cursor: pointer;
 }
 
 footer {
@@ -354,7 +356,6 @@ footer {
   }
 }
 
-
 @media (max-width: 600px) {
   .art-container {
     flex-direction: column;
@@ -379,10 +380,11 @@ footer {
 
 @media (min-resolution: 2dppx) {
   body {
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
   }
 }
 
 html {
   scroll-behavior: smooth;
 }
+
