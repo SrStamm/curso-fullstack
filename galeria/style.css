@@ -24,6 +24,8 @@
   --shadow: 2px 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+
+
 body {
   padding: 0;
   margin: 0;
@@ -90,7 +92,6 @@ main {
   justify-content: center;
   padding: 1rem;
   scroll-margin-top: var(--header-height);
-  scroll-behavior: smooth;
 }
 
 .art-container > article {
@@ -123,7 +124,6 @@ main {
 
 #exposicoes {
   scroll-margin-top: var(--header-height);
-  scroll-behavior: smooth;
 }
 
 #exposicoes h2 {
@@ -218,7 +218,8 @@ main {
 }
 
 #comentarios {
-  margin-bottom: 1rem;
+  scroll-margin-top: var(--header-height);
+  margin-bottom: 5rem;
 }
 
 #comentarios h2 {
@@ -234,7 +235,7 @@ form {
   margin-bottom: 2rem;
   padding: 2rem;
   width: 50%;
-  max-width: 800px;
+  max-width: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -258,7 +259,7 @@ form label {
 form input {
   width: 100%;
   height: 2.8rem;
-  padding: 0 1rem;
+  padding: 0 .5rem;
   border: 1px solid #ddd;
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
@@ -275,6 +276,7 @@ form textarea {
   max-height: 200px;
   height: 100%;
   font-size: 1rem;
+  padding: 0 .5rem;
 }
 
 form button {
@@ -283,10 +285,14 @@ form button {
   width: 100%;
   height: 2.8rem;
   padding: 0 1rem;
-  border: 1px solid #ddd;
+  border: none;
   border-radius: var(--radius);
   box-shadow: var(--shadow-sm);
   font-size: 1rem;
+}
+
+form button:hover {
+  cursor: pointer
 }
 
 footer {
@@ -342,6 +348,10 @@ footer {
     width: 80%;
     height: 350px;
   }
+
+  #comentarios {
+    margin-bottom: 3rem;
+  }
 }
 
 
@@ -365,4 +375,14 @@ footer {
   .exhibition {
     width: 80%;
   }
+}
+
+@media (min-resolution: 2dppx) {
+  body {
+    font-size: 1.1rem; 
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
