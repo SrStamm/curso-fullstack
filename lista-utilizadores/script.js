@@ -3,7 +3,9 @@ class Utilizador {
     this.nome = nome;
     this.email = email;
   }
+}
 
+class UtilizadorAPI {
   async buscarUtilizadores() {
     const listaUtilizadores = [];
 
