@@ -1,13 +1,34 @@
+let listaUtilizadoresGlobal = [];
+
 class Utilizador {
   constructor(nome, email) {
     this.nome = nome;
     this.email = email;
   }
 
+  // Mostra o Utilizador na interfaz
   mostrarNoDOM(listaElement) {
     const elemento = document.createElement("li");
     elemento.textContent = `${this.nome} - ${this.email}`;
+
+    const button = document.createElement("button");
+    button.innerText = "Remover";
+    elemento.append(button);
+
     listaElement.appendChild(elemento);
+
+    button.addEventListener("click", () => {
+      this.removerDaLista(this.nome);
+    });
+  }
+
+  // Remove da lista o Utilizador
+  removerDaLista(nome) {
+    listaUtilizadoresGlobal = listaUtilizadoresGlobal.filter(
+      (item) => item.nome !== nome,
+    );
+
+    atualizarInterfaz();
   }
 }
 
@@ -16,6 +37,7 @@ class UtilizadorAPI {
     this.url = url;
   }
 
+  // Procura na API os Utilizadores
   async buscarUtilizadores() {
     const listaUtilizadores = [];
 
@@ -35,16 +57,20 @@ class UtilizadorAPI {
   }
 }
 
+const api = new UtilizadorAPI("https://jsonplaceholder.typicode.com/users");
 const btn = document.querySelector("#carregarBtn");
 const lista = document.querySelector("#listaUtilizadores");
-const api = new UtilizadorAPI("https://jsonplaceholder.typicode.com/users");
+
+// atualiza a interfaz
+function atualizarInterfaz() {
+  lista.innerHTML = "";
+
+  listaUtilizadoresGlobal.forEach((e) => e.mostrarNoDOM(lista));
+}
 
 btn.addEventListener("click", async () => {
   lista.innerHTML = "";
 
-  const listaUtilizadores = await api.buscarUtilizadores();
-
-  listaUtilizadores.forEach((e) => {
-    e.mostrarNoDOM(lista);
-  });
+  listaUtilizadoresGlobal = await api.buscarUtilizadores();
+  atualizarInterfaz();
 });
