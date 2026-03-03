@@ -9,10 +9,21 @@ class Utilizador {
   // Mostra o Utilizador na interfaz
   mostrarNoDOM(listaElement) {
     const elemento = document.createElement("li");
-    elemento.textContent = `${this.nome} - ${this.email}`;
+    const div = document.createElement("div");
+    const pNome = document.createElement("p");
+    const eNome = document.createElement("p");
+
+    pNome.textContent = `${this.nome}`;
+    eNome.textContent = `${this.email}`;
+
+    div.classList.add("user-data");
+    div.appendChild(pNome);
+    div.appendChild(eNome);
 
     const button = document.createElement("button");
     button.innerText = "Remover";
+
+    elemento.append(div);
     elemento.append(button);
 
     listaElement.appendChild(elemento);
