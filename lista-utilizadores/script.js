@@ -30,7 +30,7 @@ class Utilizador {
       (item) => item.nome !== nome,
     );
 
-    atualizarInterfaz();
+    atualizarInterfaz(listaUtilizadoresGlobal);
   }
 }
 
@@ -64,15 +64,27 @@ const btn = document.querySelector("#carregarBtn");
 const lista = document.querySelector("#listaUtilizadores");
 
 // atualiza a interfaz
-function atualizarInterfaz() {
+function atualizarInterfaz(listaVar) {
   lista.innerHTML = "";
 
-  listaUtilizadoresGlobal.forEach((e) => e.mostrarNoDOM(lista));
+  listaVar.forEach((e) => e.mostrarNoDOM(lista));
 }
 
 btn.addEventListener("click", async () => {
   lista.innerHTML = "";
 
   listaUtilizadoresGlobal = await api.buscarUtilizadores();
-  atualizarInterfaz();
+  atualizarInterfaz(listaUtilizadoresGlobal);
+});
+
+const input = document.getElementById("searchInput");
+
+input.addEventListener("input", () => {
+  const value = input.value.toLowerCase();
+
+  const listaFiltrada = listaUtilizadoresGlobal.filter((user) =>
+    user.nome.toLowerCase().includes(value),
+  );
+
+  atualizarInterfaz(listaFiltrada);
 });
