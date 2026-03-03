@@ -13,6 +13,7 @@ class Utilizador {
 
     const button = document.createElement("button");
     button.innerText = "Remover";
+    button.classList.add("remove-btn");
 
     elemento.append(button);
 
