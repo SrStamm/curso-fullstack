@@ -1,6 +1,15 @@
+:root {
+  --body-bg: #ffffff;
+  --list-bg: #f3f4f6;
+  --li-bg: #ffffff;
+  --li-bg-h: #e0e7ff;
+
+  --btn-remove: #ef4444;
+}
+
 body {
   font-family: open-sans;
-  background-color: #ffffff;
+  background-color: var(--body-bg);
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -24,12 +33,14 @@ button:hover {
 }
 
 #carregarBtn {
-  width: 100px;
+  max-width: 100px;
+  width: 100%;
   margin-bottom: 20px;
 }
 
 .remove-btn {
-  background-color: #ef4444;
+  background-color: var(--btn-remove);
+  color: var(--body-bg);
 }
 
 .remove-btn:hover {
@@ -40,15 +51,16 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0 auto;
-  width: 700px;
+  max-width: 700px;
+  width: 100%;
 
-  background-color: #f3f4f6;
+  background-color: var(--list-bg);
   border-radius: 4px;
 }
 
 li {
   margin: 5px 0;
-  background-color: #ffffff;
+  background-color: var(--li-bg);
   padding: 10px;
   border-radius: 4px;
 
@@ -60,6 +72,6 @@ li {
 }
 
 li:hover {
-  background-color: #e0e7ff;
+  background-color: var(--li-bg-h);
   border-left: 4px solid #4f46e5;
 }
