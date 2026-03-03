@@ -1,5 +1,5 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: open-sans;
   padding: 20px;
 }
 
@@ -27,17 +27,4 @@ li {
 
   display: flex;
   justify-content: space-between;
-}
-
-.user-data {
-  display: flex;
-  width: 500px;
-}
-
-.user-data p {
-  margin-right: 10px;
-}
-
-.user-data p:last-child {
-  margin-right: 0;
 }
