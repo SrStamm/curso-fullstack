@@ -5,6 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Galeria de Arte Responsiva</title>
     <link href="style.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Orbitron:wght@400..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -16,28 +25,94 @@
       </nav>
     </header>
     <main>
+      <!-- Secção de artes-->
       <section id="artes" class="art-container">
         <article>
           <h2>Caminhante sobre o Mar de Névoa</h2>
-          <img src="./assets/el-caminante-sobre-el-mar-de-nubes.jpg" alt="" />
-          <p>Pintura</p>
+          <img
+            src="./assets/el-caminante-sobre-el-mar-de-nubes.jpg"
+            alt="Pintura do Caminhante sobre o Mar de Névoa"
+          />
+          <p>Caspar David Friedrich, 1818</p>
         </article>
         <article>
-          <h2>O Jardim das Delícias Terrenas</h2>
-          <img src="./assets/el-jardin-de-las-delicias.jpg" alt="" />
-          <p>Pintura</p>
+          <h2>A Criação de Adão</h2>
+          <img
+            src="./assets/the-creation-of-adam-michelangelo.jpg"
+            alt="Pintura A Criação de Adão"
+          />
+          <p>Michelangelo Buonarotti, 1511</p>
+        </article>
+        <article>
+          <h2>Medusa</h2>
+          <img
+            src="./assets/medusa-de-caravaggio.jpg"
+            alt="Pintura Medusa de Caravaggio"
+          />
+          <p>Michel Angelo Merisi da Caravaggio, 1596-1597</p>
+        </article>
+        <article>
+          <h2>As Meninas</h2>
+          <img
+            src="./assets/las-meninas-de-diego-velázquez-painting.jpg"
+            alt="Pintura As Meninas"
+          />
+          <p>Diego Velázquez, 1656</p>
         </article>
         <article>
           <h2>A Gioconda</h2>
-          <img src="./assets/la-gioconda.jpg" alt="" />
-          <p>Pintura</p>
+          <img src="./assets/la-gioconda.jpg" alt="Pintura A Gioconda" />
+          <p>Leonardo da Vinci, 1503-1515</p>
         </article>
       </section>
+
+      <!-- Secção de exposicoes-->
       <section id="exposicoes">
         <h2>Exposições</h2>
+        <ol>
+          <li class="exhibition past">
+            <h3>Exposição de Arte Clássica</h3>
+            <img src="./assets/clasic_expo.jpg">
+            <p>Data: 15 de Julho até 24 de Julho 2024</p>
+          </li>
+          <li class="exhibition present">
+            <h3>Exposição de Arte Moderno</h3>
+            <img src="./assets/modern_expo.jpg">
+            <p>Data: 13 de Janeiro até 27 de Janeiro</p>
+          </li>
+          <li class="exhibition future">
+            <h3>Exposição de Arte Digital</h3>
+            <img src="./assets/digital_expo.jpg">
+            <p>Data: Proximamente</p>
+          </li>
+        </ol>
       </section>
+
+      <!-- Secção de comentarios-->
       <section id="comentarios">
-        <h2>Comentarios</h2>
+        <h2>Comentario</h2>
+        <form action="#" method="post">
+          <div>
+            <label>Nome:</label>
+            <input type="text" placeholder="Escreva seu nome" required />
+          </div>
+          <div>
+            <label>Email:</label>
+            <input type="email" placeholder="Escreva seu email" required />
+          </div>
+          <div>
+            <label>Comentario:</label>
+            <textarea
+              rows="4"
+              type="text"
+              placeholder="Escreva o comentario..."
+              required 
+            ></textarea>
+          </div>
+          <div>
+            <button type="submit">Enviar comentario</button>
+          </div>
+        </form>
       </section>
     </main>
   </body>
