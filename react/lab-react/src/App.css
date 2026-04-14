@@ -1,0 +1,16 @@
+.user-card {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.status-ativo {
+  color: green;
+}
+
+.status-inativo {
+  color: red;
+}
+
+.l-skill {
+  list-style-type: none;
+}
