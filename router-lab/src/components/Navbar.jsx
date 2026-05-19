@@ -25,6 +25,9 @@ function Navbar() {
       <NavLink to="/users" style={linkStyle}>
         Users
       </NavLink>
+      <NavLink to="/contact" style={linkStyle}>
+        Contact
+      </NavLink>
     </nav>
   );
 }
