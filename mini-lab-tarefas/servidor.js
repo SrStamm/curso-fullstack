@@ -19,6 +19,12 @@ const servidor = createServer((req, res) => {
     return;
   }
 
+  if (req.method === "GET" && req.url === "/tarefas/concluidas") {
+    const concluidas = tarefas.filter((t) => t.concluida === true);
+    res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+    res.end(JSON.stringify(concluidas));
+  }
+
   // SE NADA BATER CERTO: 404 (não encontrado)
   res.writeHead(404, { "Content-Type": "application/json; charset=utf-8" });
   res.end(JSON.stringify({ erro: "Rota não encontrada" }));
