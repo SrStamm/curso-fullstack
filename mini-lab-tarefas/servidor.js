@@ -1,37 +1,25 @@
 // servidor.js
-import { createServer } from "node:http";
+import express from "express";
 import { tarefas } from "./dados.js"; // importamos os dados do outro módulo
 
-const servidor = createServer((req, res) => {
-  console.log(`Pedido recebido: ${req.method} ${req.url}`);
+const app = express();
 
-  // ROTA 1: página inicial
-  if (req.method === "GET" && req.url === "/") {
-    res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
-    res.end(JSON.stringify({ mensagem: "Bem-vindo à API de Tarefas!" }));
-    return; // importante: paramos aqui para não cair nas rotas seguintes
-  }
-
-  // ROTA 2: lista de tarefas
-  if (req.method === "GET" && req.url === "/tarefas") {
-    res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
-    res.end(JSON.stringify(tarefas));
-    return;
-  }
-
-  if (req.method === "GET" && req.url === "/tarefas/concluidas") {
-    const concluidas = tarefas.filter((t) => t.concluida === true);
-    res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
-    res.end(JSON.stringify(concluidas));
-    return;
-  }
-
-  // SE NADA BATER CERTO: 404 (não encontrado)
-  res.writeHead(404, { "Content-Type": "application/json; charset=utf-8" });
-  res.end(JSON.stringify({ erro: "Rota não encontrada" }));
+app.get("/", (req, res) => {
+  res.json({ mensagem: "Bem-vindo à API de Tarefas!" });
 });
 
-const PORTA = 3000;
-servidor.listen(PORTA, () => {
-  console.log(`Servidor a correr em http://localhost:${PORTA}`);
+app.get("/tarefas/", (req, res) => {
+  res.json(tarefas);
+});
+
+app.get("/tarefas/concluidas", (req, res) => {
+  res.json(tarefas.filter((t) => t.concluida == true));
+});
+
+app.use((req, res) => {
+  res.status(404).json({ erro: "Rota não encontrada" });
+});
+
+app.listen(3000, () => {
+  console.log("Servidor Express em http://localhost:3000");
 });
