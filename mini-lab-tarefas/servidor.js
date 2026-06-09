@@ -23,6 +23,7 @@ const servidor = createServer((req, res) => {
     const concluidas = tarefas.filter((t) => t.concluida === true);
     res.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
     res.end(JSON.stringify(concluidas));
+    return;
   }
 
   // SE NADA BATER CERTO: 404 (não encontrado)
